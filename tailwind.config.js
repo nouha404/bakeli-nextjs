@@ -7,11 +7,14 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
+     colors:{
+      primary_color: "#494C4F",
+      checkboxColor: "#9E9E9E",
+     buttonColor : "#45484B",
+     linkColor: "#FFD964",
+     dashColor: "#F0F0F0",
+     inputColor:"#AEAEAE"
+     }
     },
   },
   plugins: [],
