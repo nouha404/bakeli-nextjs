@@ -40,7 +40,7 @@ export default function Home() {
 
             <footer className="flex flex-col p-4 bg-primary_color mt-3 text-center">
                 <Link href="/password" className="text-linkColor">Mot de passe oublié?</Link>
-                <Link href="/sign-in" className="text-white">Vous n'avez pas de compte? <span className="text-linkColor">S'inscrire</span></Link>
+                <Link href="/sign-in" className="text-white">Vous n avez pas de compte? <span className="text-linkColor">S inscrire</span></Link>
             </footer>
           
         </div>

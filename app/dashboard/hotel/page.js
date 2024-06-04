@@ -70,79 +70,90 @@ export default function Hotel() {
                 </div>
 
                 <div className="card    justify-around bg-dashColor  grid grid-cols-3 gap-4 p-4 ">
-                    <div className="  child  flex flex-col justify-around items-center   w-[300px] h-[409.43px] left-[411px] rounded-[14px] bg-white shadow-md">
-                        <img
-                            src="/image.png"
-                            alt="Card Image"
-                            className="w-[350.57px] rounded-t-[13.65px]"
-                        />
-                        <div className="inset-0 flex flex-col justify-center items-center">
-                            <p className="font-roboto font-normal text-sm leading-[15.35px]">Boulevard Martin Luther King Dakar, 11500</p>
-                            <p className="font-roboto font-semibold text-xl leading-[25.59px]">Hôtel Terrou-Bi</p>
-                            <p className="font-roboto font-normal text-sm leading-[15.35px]">25.000 XOF par nuit</p>
+                    <a href="#">
+                        <div className="  child  flex flex-col justify-around items-center   w-[300px] h-[409.43px] left-[411px] rounded-[14px] bg-white shadow-md">
+                            <img
+                                src="/image.png"
+                                alt="Card Image"
+                                className="w-[350.57px] rounded-t-[13.65px]"
+                            />
+                            <div className="inset-0 flex flex-col justify-center items-center">
+                                <p className="font-roboto font-normal text-sm leading-[15.35px]">Boulevard Martin Luther King Dakar, 11500</p>
+                                <p className="font-roboto font-semibold text-xl leading-[25.59px]">Hôtel Terrou-Bi</p>
+                                <p className="font-roboto font-normal text-sm leading-[15.35px]">25.000 XOF par nuit</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div className="  child  flex flex-col justify-around items-center   w-[300px] h-[409.43px] left-[411px] rounded-[14px] bg-white shadow-md">
-                        <img
-                            src="/image2.png"
-                            alt="Card Image"
-                            className="w-[350.57px] rounded-t-[13.65px]"
-                        />
-                        <div className="inset-0 flex flex-col justify-center items-center">
-                            <p className="font-roboto font-normal text-sm leading-[15.35px]">Boulevard Martin Luther King Dakar, 11500</p>
-                            <p className="font-roboto font-semibold text-xl leading-[25.59px]">Hôtel Terrou-Bi</p>
-                            <p className="font-roboto font-normal text-sm leading-[15.35px]">25.000 XOF par nuit</p>
+                    </a>
+                    <a href="#">
+                        <div className="  child  flex flex-col justify-around items-center   w-[300px] h-[409.43px] left-[411px] rounded-[14px] bg-white shadow-md">
+                            <img
+                                src="/image2.png"
+                                alt="Card Image"
+                                className="w-[350.57px] rounded-t-[13.65px]"
+                            />
+                            <div className="inset-0 flex flex-col justify-center items-center">
+                                <p className="font-roboto font-normal text-sm leading-[15.35px]">Boulevard Martin Luther King Dakar, 11500</p>
+                                <p className="font-roboto font-semibold text-xl leading-[25.59px]">Hôtel Terrou-Bi</p>
+                                <p className="font-roboto font-normal text-sm leading-[15.35px]">25.000 XOF par nuit</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="  child  flex flex-col justify-around items-center   w-[300px] h-[409.43px] left-[411px] rounded-[14px] bg-white shadow-md">
-                        <img
-                            src="/image3.png"
-                            alt="Card Image"
-                            className="w-[350.57px] rounded-t-[13.65px]"
-                        />
-                        <div className="inset-0 flex flex-col justify-center items-center">
-                            <p className="font-roboto font-normal text-sm leading-[15.35px]">Boulevard Martin Luther King Dakar, 11500</p>
-                            <p className="font-roboto font-semibold text-xl leading-[25.59px]">Hôtel Terrou-Bi</p>
-                            <p className="font-roboto font-normal text-sm leading-[15.35px]">25.000 XOF par nuit</p>
+                    </a>
+                   <a href="#">
+                        <div className="  child  flex flex-col justify-around items-center   w-[300px] h-[409.43px] left-[411px] rounded-[14px] bg-white shadow-md">
+                            <img
+                                src="/image3.png"
+                                alt="Card Image"
+                                className="w-[350.57px] rounded-t-[13.65px]"
+                            />
+                            <div className="inset-0 flex flex-col justify-center items-center">
+                                <p className="font-roboto font-normal text-sm leading-[15.35px]">Boulevard Martin Luther King Dakar, 11500</p>
+                                <p className="font-roboto font-semibold text-xl leading-[25.59px]">Hôtel Terrou-Bi</p>
+                                <p className="font-roboto font-normal text-sm leading-[15.35px]">25.000 XOF par nuit</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="  child  flex flex-col justify-around items-center   w-[300px] h-[409.43px] left-[411px] rounded-[14px] bg-white shadow-md">
-                        <img
-                            src="/image4.png"
-                            alt="Card Image"
-                            className="w-[350.57px] rounded-t-[13.65px]"
-                        />
-                        <div className="inset-0 flex flex-col justify-center items-center">
-                            <p className="font-roboto font-normal text-sm leading-[15.35px]">Boulevard Martin Luther King Dakar, 11500</p>
-                            <p className="font-roboto font-semibold text-xl leading-[25.59px]">Hôtel Terrou-Bi</p>
-                            <p className="font-roboto font-normal text-sm leading-[15.35px]">25.000 XOF par nuit</p>
+                    </a>
+                   <a href="#">
+                        <div className="  child  flex flex-col justify-around items-center   w-[300px] h-[409.43px] left-[411px] rounded-[14px] bg-white shadow-md">
+                            <img
+                                src="/image4.png"
+                                alt="Card Image"
+                                className="w-[350.57px] rounded-t-[13.65px]"
+                            />
+                            <div className="inset-0 flex flex-col justify-center items-center">
+                                <p className="font-roboto font-normal text-sm leading-[15.35px]">Boulevard Martin Luther King Dakar, 11500</p>
+                                <p className="font-roboto font-semibold text-xl leading-[25.59px]">Hôtel Terrou-Bi</p>
+                                <p className="font-roboto font-normal text-sm leading-[15.35px]">25.000 XOF par nuit</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="  child  flex flex-col justify-around items-center   w-[300px] h-[409.43px] left-[411px] rounded-[14px] bg-white shadow-md">
-                        <img
-                            src="/image5.png"
-                            alt="Card Image"
-                            className="w-[350.57px] rounded-t-[13.65px]"
-                        />
-                        <div className="inset-0 flex flex-col justify-center items-center">
-                            <p className="font-roboto font-normal text-sm leading-[15.35px]">Boulevard Martin Luther King Dakar, 11500</p>
-                            <p className="font-roboto font-semibold text-xl leading-[25.59px]">Hôtel Terrou-Bi</p>
-                            <p className="font-roboto font-normal text-sm leading-[15.35px]">25.000 XOF par nuit</p>
+                    </a>
+                    <a href="#">
+                        <div className="  child  flex flex-col justify-around items-center   w-[300px] h-[409.43px] left-[411px] rounded-[14px] bg-white shadow-md">
+                            <img
+                                src="/image5.png"
+                                alt="Card Image"
+                                className="w-[350.57px] rounded-t-[13.65px]"
+                            />
+                            <div className="inset-0 flex flex-col justify-center items-center">
+                                <p className="font-roboto font-normal text-sm leading-[15.35px]">Boulevard Martin Luther King Dakar, 11500</p>
+                                <p className="font-roboto font-semibold text-xl leading-[25.59px]">Hôtel Terrou-Bi</p>
+                                <p className="font-roboto font-normal text-sm leading-[15.35px]">25.000 XOF par nuit</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="  child  flex flex-col justify-around items-center   w-[300px] h-[409.43px] left-[411px] rounded-[14px] bg-white shadow-md">
-                        <img
-                            src="/image6.png"
-                            alt="Card Image"
-                            className="w-[350.57px] rounded-t-[13.65px]"
-                        />
-                        <div className="inset-0 flex flex-col justify-center items-center">
-                            <p className="font-roboto font-normal text-sm leading-[15.35px]">Boulevard Martin Luther King Dakar, 11500</p>
-                            <p className="font-roboto font-semibold text-xl leading-[25.59px]">Hôtel Terrou-Bi</p>
-                            <p className="font-roboto font-normal text-sm leading-[15.35px]">25.000 XOF par nuit</p>
+                    </a>
+                   <a href="#">
+                        <div className="  child  flex flex-col justify-around items-center   w-[300px] h-[409.43px] left-[411px] rounded-[14px] bg-white shadow-md">
+                            <img
+                                src="/image6.png"
+                                alt="Card Image"
+                                className="w-[350.57px] rounded-t-[13.65px]"
+                            />
+                            <div className="inset-0 flex flex-col justify-center items-center">
+                                <p className="font-roboto font-normal text-sm leading-[15.35px]">Boulevard Martin Luther King Dakar, 11500</p>
+                                <p className="font-roboto font-semibold text-xl leading-[25.59px]">Hôtel Terrou-Bi</p>
+                                <p className="font-roboto font-normal text-sm leading-[15.35px]">25.000 XOF par nuit</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
 
 
                 </div>
