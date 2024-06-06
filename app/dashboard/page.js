@@ -1,20 +1,27 @@
+"use client"
 import Link from 'next/link';
+import {useRouter} from "next/navigation";
 
 const DashboardHeader = () => {
+    const router = useRouter()
+    const logoOut= ()=>{
+        router.push("/")
+    }
     return (
+
         <div className="flex justify-between items-center w-[1055px] p-4 border-b border-gray-300 bg-white">
-            <Link href="/dashboard" className="text-xl pl-4 font-semibold">Dashboard</Link>
+            <Link href="/dashboard" className="pl-4 text-xl font-semibold">Dashboard</Link>
             <div className="flex items-center space-x-4">
                 <div className="relative">
                     <input
                         type="text"
                         placeholder="Recherche"
-                        className="pl-8 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:border-blue-400"
+                        className="py-2 pl-8 pr-4 border border-gray-300 rounded-full focus:outline-none focus:border-blue-400"
                     />
 
                 </div>
                 <button className="relative">
-                    <div className="group flex">
+                    <div className="flex group">
                         <svg width="17" height="21" viewBox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.6016 15.3462V9.34708C12.6016 8.06603 12.2422 7.00369 11.5236 6.16007C10.805 5.2852 9.83635 4.84777 8.61779 4.84777C7.39923 4.84777 6.43063 5.2852 5.71199 6.16007C4.99335 7.00369 4.63403 8.06603 4.63403 9.34708V15.3462H12.6016ZM14.6169 14.3151L16.6322 16.3304V17.3146H0.603393V16.3304L2.61871 14.3151V9.34708C2.61871 7.78482 3.00927 6.42565 3.79041 5.26958C4.60278 4.11351 5.71199 3.36362 7.11802 3.01993V2.31691C7.11802 1.91072 7.25862 1.56702 7.53983 1.28582C7.82104 0.973366 8.18036 0.817139 8.61779 0.817139C9.05522 0.817139 9.41454 0.973366 9.69575 1.28582C9.97696 1.56702 10.1176 1.91072 10.1176 2.31691V3.01993C11.5236 3.36362 12.6172 4.11351 13.3983 5.26958C14.2107 6.42565 14.6169 7.78482 14.6169 9.34708V14.3151ZM10.0238 19.7517C9.61764 20.1267 9.14896 20.3142 8.61779 20.3142C8.08662 20.3142 7.61794 20.1267 7.21176 19.7517C6.80557 19.3456 6.60247 18.8769 6.60247 18.3457H10.6331C10.6331 18.8769 10.43 19.3456 10.0238 19.7517Z" fill="black" fill-opacity="0.87"/>
                         </svg>
@@ -25,7 +32,7 @@ const DashboardHeader = () => {
                         </svg>
                     </div>
                 </button>
-                <div className="flex items-center space-x-2 relative">
+                <div className="relative flex items-center space-x-2">
                     <img
                         src="/photo.jpeg"
                         alt="User Avatar"
@@ -33,15 +40,17 @@ const DashboardHeader = () => {
                     />
 
 
-                    <svg className="absolute left-3 top-5 " width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2.2738" y="1.99325" width="10.665" height="10.665" rx="5.33252" fill="#00FF92" stroke="white" stroke-width="2.66626"/>
-                    </svg>
+                  <button onClick={logoOut}>
+                      <svg className="absolute left-3 top-5 " width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2.2738" y="1.99325" width="10.665" height="10.665" rx="5.33252" fill="#00FF92" stroke="white" stroke-width="2.66626"/>
+                        </svg>
 
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M16 17L21 12L16 7" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M21 12H9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 17L21 12L16 7" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 12H9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button> 
 
 
                 </div>
@@ -57,8 +66,8 @@ export default function Dashboard() {
 
         <div className="">
                 <DashboardHeader />
-                <div className="description pl-8 bg-white p-5">
-                    <h3 className="font-roboto font-light text-4xl leading-normal">Bienvenue sur RED Product</h3>
+                <div className="p-5 pl-8 bg-white description">
+                    <h3 className="text-4xl font-light leading-normal font-roboto">Bienvenue sur RED Product</h3>
                     <p className="  h-[26px] top-[56.34px] left-[47.38px] opacity-60">Lorem ipsum dolor sit amet consectetur</p>
                 </div>
 
@@ -69,7 +78,7 @@ export default function Dashboard() {
                             <path d="M32.5294 33.313L40.7782 28.1576L32.5294 23.3302L24.2807 28.1576L32.5294 33.313ZM42.5123 28.345V38.3279C42.5123 38.859 42.3092 39.3277 41.903 39.7339C41.5281 40.1401 41.075 40.3432 40.5438 40.3432H24.515C23.9839 40.3432 23.5152 40.1401 23.109 39.7339C22.7341 39.3277 22.5466 38.859 22.5466 38.3279V28.345C22.5466 27.5639 22.8591 26.9859 23.484 26.6109L32.5294 21.3149L41.5749 26.6109C42.1998 26.9859 42.5123 27.5639 42.5123 28.345Z" fill="white" fill-opacity="0.87"/>
                         </svg>
                         <div className="test">
-                            <p>125 <span className="font-roboto font-light text-lg text-black">Formulaires</span></p>
+                            <p>125 <span className="text-lg font-light text-black font-roboto">Formulaires</span></p>
                             <p>Je ne sais pas quoi mettre</p>
                         </div>
 
@@ -81,7 +90,7 @@ export default function Dashboard() {
                         </svg>
 
                         <div className="test">
-                            <p>40 <span className="font-roboto font-light text-lg text-black">Messages</span></p>
+                            <p>40 <span className="text-lg font-light text-black font-roboto">Messages</span></p>
                             <p>Je ne sais pas quoi mettre</p>
                         </div>
 
@@ -93,7 +102,7 @@ export default function Dashboard() {
                         </svg>
 
                         <div className="test">
-                            <p>600 <span className="font-roboto font-light text-lg text-black">Utilisateurs</span></p>
+                            <p>600 <span className="text-lg font-light text-black font-roboto">Utilisateurs</span></p>
                             <p>Je ne sais pas quoi mettre</p>
                         </div>
 
@@ -105,7 +114,7 @@ export default function Dashboard() {
                         </svg>
 
                         <div className="test">
-                            <p>25 <span className="font-roboto font-light text-lg text-black" >Email</span></p>
+                            <p>25 <span className="text-lg font-light text-black font-roboto" >Email</span></p>
                             <p>Je ne sais pas quoi mettre</p>
                         </div>
 
@@ -118,7 +127,7 @@ export default function Dashboard() {
                         </svg>
 
                         <div className="test">
-                            <p>40 <span className="font-roboto font-light text-lg text-black">Hotel</span></p>
+                            <p>40 <span className="text-lg font-light text-black font-roboto">Hotel</span></p>
                             <p>Je ne sais pas quoi mettre</p>
                         </div>
 
@@ -130,7 +139,7 @@ export default function Dashboard() {
                         </svg>
 
                         <div className="test">
-                            <p>02 <span className="font-roboto font-light text-lg text-black">Entités</span></p>
+                            <p>02 <span className="text-lg font-light text-black font-roboto">Entités</span></p>
                             <p>Je ne sais pas quoi mettre</p>
                         </div>
 
