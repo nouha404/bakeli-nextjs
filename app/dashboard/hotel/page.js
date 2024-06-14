@@ -90,6 +90,7 @@ export default function Hotel() {
                     <Link href="/dashboard/add-hotel" className="button border-2 border-inputColor h-[56px] flex justify-center rounded items-center text-center w-[250px] ">
                     <Plus className="" /> Créer un nouveau hôtel
                     </Link>
+
                 </div>
 
                 <div className="grid justify-around grid-cols-3 gap-4 p-4 card bg-dashColor ">
