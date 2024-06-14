@@ -1,20 +1,25 @@
+"use client"
+
 import Link from 'next/link';
+import { Plus } from "lucide-react";
+import { useEffect, useState } from 'react';
+import {fetchData} from "@/services/api";
 
 const DashboardHeader = () => {
     return (
         <div className="flex justify-between items-center w-[1055px] p-4 border-b border-gray-300 bg-white">
-            <Link href="/dashboard" className="text-xl pl-4 font-semibold">Dashboard</Link>
+            <Link href="/dashboard" className="pl-4 text-xl font-semibold">Dashboard</Link>
             <div className="flex items-center space-x-4">
                 <div className="relative">
                     <input
                         type="text"
                         placeholder="Recherche"
-                        className="pl-8 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:border-blue-400"
+                        className="py-2 pl-8 pr-4 border border-gray-300 rounded-full focus:outline-none focus:border-blue-400"
                     />
 
                 </div>
                 <button className="relative">
-                    <div className="group flex">
+                    <div className="flex group">
                         <svg width="17" height="21" viewBox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.6016 15.3462V9.34708C12.6016 8.06603 12.2422 7.00369 11.5236 6.16007C10.805 5.2852 9.83635 4.84777 8.61779 4.84777C7.39923 4.84777 6.43063 5.2852 5.71199 6.16007C4.99335 7.00369 4.63403 8.06603 4.63403 9.34708V15.3462H12.6016ZM14.6169 14.3151L16.6322 16.3304V17.3146H0.603393V16.3304L2.61871 14.3151V9.34708C2.61871 7.78482 3.00927 6.42565 3.79041 5.26958C4.60278 4.11351 5.71199 3.36362 7.11802 3.01993V2.31691C7.11802 1.91072 7.25862 1.56702 7.53983 1.28582C7.82104 0.973366 8.18036 0.817139 8.61779 0.817139C9.05522 0.817139 9.41454 0.973366 9.69575 1.28582C9.97696 1.56702 10.1176 1.91072 10.1176 2.31691V3.01993C11.5236 3.36362 12.6172 4.11351 13.3983 5.26958C14.2107 6.42565 14.6169 7.78482 14.6169 9.34708V14.3151ZM10.0238 19.7517C9.61764 20.1267 9.14896 20.3142 8.61779 20.3142C8.08662 20.3142 7.61794 20.1267 7.21176 19.7517C6.80557 19.3456 6.60247 18.8769 6.60247 18.3457H10.6331C10.6331 18.8769 10.43 19.3456 10.0238 19.7517Z" fill="black" fill-opacity="0.87"/>
                         </svg>
@@ -25,7 +30,7 @@ const DashboardHeader = () => {
                         </svg>
                     </div>
                 </button>
-                <div className="flex items-center space-x-2 relative">
+                <div className="relative flex items-center space-x-2">
                     <img
                         src="/photo.jpeg"
                         alt="User Avatar"
@@ -50,110 +55,77 @@ const DashboardHeader = () => {
     );
 };
 
-
 export default function Hotel() {
-  return (
+
+    const [hotels, setHotels] = useState([]);
+    useEffect(() => {
+        const getHotels = async () => {
+            try {
+                const data = await fetchData('/hotels');
+                setHotels(data);
+            } catch (error) {
+
+            }
+        };
+
+        getHotels();
+    }, []);
+
+
+    console.log(hotels)
+
+
+    return (
 
         <div className="">
                 <DashboardHeader />
-                <div className="description pl-8 bg-white p-5 flex justify-between items-center">
+                <div className="flex items-center justify-between p-5 pl-8 bg-white description">
                     <div>
-                        <h3 className="font-roboto font-light text-4xl leading-normal">Hotels <span>10</span></h3>
+                        <h3 className="text-4xl font-light leading-normal font-roboto">Hotels <span>10</span></h3>
                         <p className="  h-[26px] top-[56.34px] left-[47.38px] opacity-60">Lorem ipsum dolor sit amet consectetur</p>
 
 
                     </div>
 
-                    <Link href="#" className="button border-2 border-inputColor h-[56px] flex justify-center rounded items-center text-center w-[250px] ">
-                        <span className="font-bold font-[90px]">+</span> Créer un nouveau hôtel
+                    <Link href="/dashboard/add-hotel" className="button border-2 border-inputColor h-[56px] flex justify-center rounded items-center text-center w-[250px] ">
+                    <Plus className="" /> Créer un nouveau hôtel
                     </Link>
                 </div>
 
-                <div className="card    justify-around bg-dashColor  grid grid-cols-3 gap-4 p-4 ">
-                    <a href="#">
-                        <div className="  child  flex flex-col justify-around items-center   w-[300px] h-[409.43px] left-[411px] rounded-[14px] bg-white shadow-md">
-                            <img
-                                src="/image.png"
-                                alt="Card Image"
-                                className="w-[350.57px] rounded-t-[13.65px]"
-                            />
-                            <div className="inset-0 flex flex-col justify-center items-center">
-                                <p className="font-roboto font-normal text-sm leading-[15.35px]">Boulevard Martin Luther King Dakar, 11500</p>
-                                <p className="font-roboto font-semibold text-xl leading-[25.59px]">Hôtel Terrou-Bi</p>
-                                <p className="font-roboto font-normal text-sm leading-[15.35px]">25.000 XOF par nuit</p>
+                <div className="grid justify-around grid-cols-3 gap-4 p-4 card bg-dashColor ">
+                    {hotels.map((hotel) => (
+                        <div
+                            key={hotel.id}
+                             className="flex flex-col bg-white rounded-lg shadow-md overflow-hidden">
+                            <div className="flex-shrink-0">
+                                <img className="h-48 w-full object-cover" src="/image2.png" alt="" />
                             </div>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div className="  child  flex flex-col justify-around items-center   w-[300px] h-[409.43px] left-[411px] rounded-[14px] bg-white shadow-md">
-                            <img
-                                src="/image2.png"
-                                alt="Card Image"
-                                className="w-[350.57px] rounded-t-[13.65px]"
-                            />
-                            <div className="inset-0 flex flex-col justify-center items-center">
-                                <p className="font-roboto font-normal text-sm leading-[15.35px]">Boulevard Martin Luther King Dakar, 11500</p>
-                                <p className="font-roboto font-semibold text-xl leading-[25.59px]">Hôtel Terrou-Bi</p>
-                                <p className="font-roboto font-normal text-sm leading-[15.35px]">25.000 XOF par nuit</p>
+
+                            {/*
+                             <div className="inset-0 flex flex-col items-center justify-center">
+                                <p className="font-roboto font-normal text-sm leading-[15.35px]">{hotel.address}</p>
+                                <p className="font-roboto font-semibold text-xl leading-[25.59px]">{hotel.name}</p>
+                                <p className="font-roboto font-normal text-sm leading-[15.35px]">{hotel.pricePerNight}</p>
                             </div>
+                            */}
+
+                            <Link href={`/hotels/${hotel.id}`}>
+                                <div className="flex-1 p-6 flex flex-col justify-between">
+                                    <div className="flex-1">
+                                        <p className="text-xl text-linkColor-400 font-medium">
+                                                <span className="hover:underline">
+                                                    {hotel.address}
+                                                </span>
+                                        </p>
+                                        <p className="mt-3 text-2xl text-adress-600 font-roboto">{hotel.name}</p>
+                                        <p className="font-roboto font-normal text-base leading-[15.35px]">{hotel.pricePerNight}</p>
+                                    </div>
+                                </div>
+                            </Link>
+
                         </div>
-                    </a>
-                   <a href="#">
-                        <div className="  child  flex flex-col justify-around items-center   w-[300px] h-[409.43px] left-[411px] rounded-[14px] bg-white shadow-md">
-                            <img
-                                src="/image3.png"
-                                alt="Card Image"
-                                className="w-[350.57px] rounded-t-[13.65px]"
-                            />
-                            <div className="inset-0 flex flex-col justify-center items-center">
-                                <p className="font-roboto font-normal text-sm leading-[15.35px]">Boulevard Martin Luther King Dakar, 11500</p>
-                                <p className="font-roboto font-semibold text-xl leading-[25.59px]">Hôtel Terrou-Bi</p>
-                                <p className="font-roboto font-normal text-sm leading-[15.35px]">25.000 XOF par nuit</p>
-                            </div>
-                        </div>
-                    </a>
-                   <a href="#">
-                        <div className="  child  flex flex-col justify-around items-center   w-[300px] h-[409.43px] left-[411px] rounded-[14px] bg-white shadow-md">
-                            <img
-                                src="/image4.png"
-                                alt="Card Image"
-                                className="w-[350.57px] rounded-t-[13.65px]"
-                            />
-                            <div className="inset-0 flex flex-col justify-center items-center">
-                                <p className="font-roboto font-normal text-sm leading-[15.35px]">Boulevard Martin Luther King Dakar, 11500</p>
-                                <p className="font-roboto font-semibold text-xl leading-[25.59px]">Hôtel Terrou-Bi</p>
-                                <p className="font-roboto font-normal text-sm leading-[15.35px]">25.000 XOF par nuit</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div className="  child  flex flex-col justify-around items-center   w-[300px] h-[409.43px] left-[411px] rounded-[14px] bg-white shadow-md">
-                            <img
-                                src="/image5.png"
-                                alt="Card Image"
-                                className="w-[350.57px] rounded-t-[13.65px]"
-                            />
-                            <div className="inset-0 flex flex-col justify-center items-center">
-                                <p className="font-roboto font-normal text-sm leading-[15.35px]">Boulevard Martin Luther King Dakar, 11500</p>
-                                <p className="font-roboto font-semibold text-xl leading-[25.59px]">Hôtel Terrou-Bi</p>
-                                <p className="font-roboto font-normal text-sm leading-[15.35px]">25.000 XOF par nuit</p>
-                            </div>
-                        </div>
-                    </a>
-                   <a href="#">
-                        <div className="  child  flex flex-col justify-around items-center   w-[300px] h-[409.43px] left-[411px] rounded-[14px] bg-white shadow-md">
-                            <img
-                                src="/image6.png"
-                                alt="Card Image"
-                                className="w-[350.57px] rounded-t-[13.65px]"
-                            />
-                            <div className="inset-0 flex flex-col justify-center items-center">
-                                <p className="font-roboto font-normal text-sm leading-[15.35px]">Boulevard Martin Luther King Dakar, 11500</p>
-                                <p className="font-roboto font-semibold text-xl leading-[25.59px]">Hôtel Terrou-Bi</p>
-                                <p className="font-roboto font-normal text-sm leading-[15.35px]">25.000 XOF par nuit</p>
-                            </div>
-                        </div>
-                    </a>
+                    ))}
+
 
 
                 </div>

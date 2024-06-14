@@ -32,7 +32,7 @@ const DashboardHeader = () => {
                         </svg>
                     </div>
                 </button>
-                <div className="relative flex items-center space-x-2">
+                <div className="relative flex items-center space-x-2 ">
                     <img
                         src="/photo.jpeg"
                         alt="User Avatar"

@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Sidebar() {
     return (
         <div className="">
-            <div className="flex justify-around  logo">
+            <div className="flex justify-around logo">
                 <svg width="14" height="28" viewBox="0 0 14 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0.666016 0.666237H13.9973L0.666016 27.3288V0.666237Z" fill="white"/>
                 </svg>
@@ -21,7 +21,7 @@ export default function Sidebar() {
                 RED PRODUCT
             </div>
 
-            <h2 className="text-white pt-8">Principal</h2>
+            <h2 className="pt-8 text-white">Principal</h2>
 
             <div className="dash hover:bg-white hover:text-black h-[48px] w-[310px]" >
                 <Link href="/dashboard" className="flex pt-3 justify-around w-[150px] hover:text-black">
@@ -50,10 +50,10 @@ export default function Sidebar() {
                 </Link>
             </div>
 
-            <div className="footer  w-[310px] h-[200px] mt-[230px]">
+            <div className="footer  w-[310px] h-[200px] mt-[350px]">
 
-                <div className="test border-3 border-amber-300 flex">
-                    <div className="flex items-center space-x-2 relative">
+                <div className="flex test">
+                    <div className="relative flex items-center space-x-2 " >
                         <img
                             src="/photo.jpeg"
                             alt="User Avatar"
